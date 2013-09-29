@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MY TITLE</title>
+    <title>Label Machines - Contract Creator</title>
     <meta content='MY DESCRIPTION' name='description'>
     <meta content='MY AUTHOR' name='author'>
     <meta charset='UTF-8'>
@@ -10,17 +10,86 @@
   </head>
   <body>
     <div id='container'>
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', YOUR_CODE']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
+      <!-- #logo -->
+      <div id='progress'>
+        <div id='progressContainer'></div>
+      </div>
+      <div id='navButtons'>
+        <div class='button backButton'>BACK</div>
+        <div class='button nextButton active'>NEXT</div>
+      </div>
+      <div class='panel welcome'>
+        <div class='content'>
+          <div class='welcomeCard'>
+            <div id='contractLogo'></div>
+            <h1>Contract Genius</h1>
+            <h2>Generate contracts online, then send to artists in an easy to read format.</h2>
+            <div class='button beginButton'>BEGIN</div>
+          </div>
+        </div>
+      </div>
+      <div id='templatesContainer'>
+        <!-- .panel -->
+        <!-- .content -->
+        <!-- .half -->
+        <!-- .survey -->
+        <!-- .clauseSwitch.disabled -->
+        <!-- %label What is the name of your company? -->
+        <!-- %input.updater{:placeholder => 'text field'} -->
+        <!-- %input.updater.dateField{:placeholder => 'date field'} -->
+        <!-- %input.updater.dropdown{:placeholder => 'ddropdown', :data => {:dropdownkey => 'releaseFormat'} } -->
+        <!-- .options{ :data => {:dropdownkey => 'releaseFormat'} } -->
+        <!-- .option{ :data => {:dropdownkey => 'releaseFormat'} } Option 1 -->
+        <!-- .option{ :data => {:dropdownkey => 'releaseFormat'} } Option 2 -->
+        <!-- .half.r -->
+        <!-- .clauseTitle -->
+        <!-- %h1 Clause Preview -->
+        <!-- .clause -->
+        <!-- %h2 This sentence can't be hovered. -->
+        <!-- .clauseTitle -->
+        <!-- %h1 Normal Person Translation -->
+        <!-- .clause.trans -->
+        <!-- %h2 You hovered me! -->
+        <div class='panel endCard'>
+          <div class='endNote'>You're done.</div>
+          <div class='content'>
+            <div class='half'>
+              <div class='survey'>
+                <label>Add your label's logo</label>
+                <div id='uploadInit'>Upload a 200px square JPEG</div>
+                <label>Your email:</label>
+                <input id='labelEmail'>
+                <input id='uploader' type='file'>
+              </div>
+            </div>
+            <div class='half r'>
+              <div class='survey'>
+                <label>Come back to this contract:</label>
+                <input id='bitly'>
+                <label>Your artist's email:</label>
+                <input id='artistEmail'>
+              </div>
+            </div>
+            <div class='termsConditions'>I agree to the terms and conditions.</div>
+            <div class='half'>
+              <div class='button download' id='contract'>DOWNLOAD CONTRACT</div>
+            </div>
+            <div class='half r'>
+              <div class='button download' id='translations'>DOWNLOAD TRANSLATIONS</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- :javascript -->
+    <!-- var _gaq = _gaq || []; -->
+    <!-- _gaq.push(['_setAccount', YOUR_CODE']); -->
+    <!-- _gaq.push(['_trackPageview']); -->
+    <!-- (function() { -->
+    <!-- var ga = document.createElement('script'); -->
+    <!-- ga.type = 'text/javascript'; ga.async = true; -->
+    <!-- ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; -->
+    <!-- var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); -->
+    <!-- })(); -->
   </body>
 </html>

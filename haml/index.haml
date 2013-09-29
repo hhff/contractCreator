@@ -1,7 +1,7 @@
 !!! 5
 %html
 	%head
-		%title= "MY TITLE"
+		%title= "Label Machines - Contract Creator"
 		%meta{ :content => "MY DESCRIPTION", :name => "description" }
 		%meta{ :content => "MY AUTHOR", :name => "author" }
 		%meta{ :charset => "UTF-8" }
@@ -9,14 +9,82 @@
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
 	%body
 		#container
+			/#logo
+			#progress
+				#progressContainer
+			#navButtons
+				.button.backButton BACK
+				.button.nextButton.active NEXT
+			.panel.welcome
+				.content
+					.welcomeCard
+						#contractLogo
+						%h1 Contract Genius
+						%h2 Generate contracts online, then send to artists in an easy to read format. 
+						.button.beginButton BEGIN
+			
+			#templatesContainer
+				/ .panel
+				/ 	.content
+				/ 		.half
+				/ 			.survey
+				/ 				.clauseSwitch.disabled
+				/ 				%label What is the name of your company?
+				/ 				%input.updater{:placeholder => 'text field'}
+				/ 				%input.updater.dateField{:placeholder => 'date field'}
 
-			:javascript
-				var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', YOUR_CODE']);
-				_gaq.push(['_trackPageview']);
-				(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				})();
+				/ 				%input.updater.dropdown{:placeholder => 'ddropdown', :data => {:dropdownkey => 'releaseFormat'} }
+				/ 				.options{ :data => {:dropdownkey => 'releaseFormat'} }
+				/ 					.option{ :data => {:dropdownkey => 'releaseFormat'} } Option 1
+				/ 					.option{ :data => {:dropdownkey => 'releaseFormat'} } Option 2
+
+				/ 		.half.r
+				/ 			.clauseTitle 
+				/ 				%h1 Clause Preview
+				/ 			.clause
+				/ 				%h2 This sentence can't be hovered.
+				/ 			.clauseTitle 
+				/ 				%h1 Normal Person Translation
+				/ 			.clause.trans
+				/ 				%h2 You hovered me!
+
+				.panel.endCard
+					.endNote You're done.
+					.content
+						.half
+							.survey
+								%label Add your label's logo
+								#uploadInit Upload a 200px square JPEG
+								%label Your email:
+								%input#labelEmail
+								%input#uploader{ :type => 'file' }
+
+						.half.r
+							.survey
+								%label Come back to this contract:
+								%input#bitly
+								%label Your artist's email:
+								%input#artistEmail
+
+						.termsConditions I agree to the terms and conditions.
+						
+						.half
+							.button.download#contract DOWNLOAD CONTRACT
+
+
+						.half.r
+							.button.download#translations DOWNLOAD TRANSLATIONS
+
+
+
+
+		/ :javascript
+		/ 	var _gaq = _gaq || [];
+		/ 	_gaq.push(['_setAccount', YOUR_CODE']);
+		/ 	_gaq.push(['_trackPageview']);
+		/ 	(function() {
+		/ 	var ga = document.createElement('script');
+		/ 	ga.type = 'text/javascript'; ga.async = true;
+		/ 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		/ 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		/ 	})();

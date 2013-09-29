@@ -1,8 +1,209 @@
 @import "normalize";
 @import "compass";
+@import "compass/css3/user-interface";
+@import "colors";
+@import "timings";
+@import "buttons";
+@import "fonts";
+@import "forms";
+@import "images";
+@import "dropdowns";
+@import "clause";
+@import "vendor/default";
+@import "vendor/default.date";
 
 body {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	background-color: $lightGrey;
 }
 
 #container {
+	position:absolute;
+	width:100%;
+	height:100%;
+	@include transition(right, $longTransition);
+	@include user-select(none);
+	z-index:1;
+
+	#logo {
+		width: 250px;
+		height: 41px;
+		background: url($labelMachinesLogo) no-repeat;
+		background-size: contain;
+		position:fixed;
+		left: 5px;
+		top: 5px;
+	}
+
+	#progress{
+		text-align: center;
+		width: 72%;
+		height:80px;
+		margin: 0 0 0 14%;
+		position: fixed;
+		display: block;
+		top: -80px;
+		left: 0%;
+		z-index: -1;
+		@include opacity(0);
+		@include transition(all, $longTransition);
+		
+		&.active{
+			top: 0px;
+			z-index: 2;
+			@include opacity(1);
+		}
+
+		#progressContainer{
+			position:relative;
+			display: inline-block;
+			top:45%;
+
+			.indicator{
+				width: 10px;
+				height: 10px;
+				background: $darkGrey;
+				@include border-radius(5px);
+				display:inline-block;
+				margin:0 15px;
+				cursor:pointer;
+				@include transition(all, $shortTransition);
+
+				&:hover{
+					@include scale(1.5);
+				}
+
+				&.active{
+					@include scale(2);
+					cursor: auto;
+				}
+
+				&.valid{
+					background: $lightGreen;
+				}
+
+				&.invalid{
+					background: $lightOrange;					
+				}
+			}	
+		}
+	}
+
+	#navButtons{
+		text-align: center;
+		width: 72%;
+		height:80px;
+		margin: 0 0 0 14%;
+		position: fixed;
+		display: block;
+		//@include translate(0%, -50%);
+		bottom: -80px;
+		left: 0%;
+		z-index: -1;
+		@include opacity(0);
+		@include transition(all, $longTransition);
+
+		&.active{
+			bottom:0px;
+			z-index: 2;
+			@include opacity(1);
+		}
+	}
+
+	.panel {
+		width:200%;
+		height:100%;
+		left:200%;
+		min-width:2048px;
+		min-height: 768px;
+		display:inline-block;
+		position:absolute;
+		z-index:-1;
+		@include opacity(0);
+		@include transition(opacity, $shortTransition);
+		top:50%;
+
+		.welcomeCard {
+			#contractLogo {
+				width: 180px;
+				height: 180px;
+				background: url($contractGeniusLogo) no-repeat;
+				background-size: contain;
+				margin:auto;
+			}
+
+			h1 {
+				@include titleFontStyle;
+			}
+
+			h2 {
+				@include capsFontStyle;
+				margin: 25px 0 35px 0;
+			}
+		}
+
+		.content{
+			text-align: center;
+			width: 36%;
+			//height:500px;
+			margin: 0 0 0 7%;
+			position: relative;
+			display: inline-block;
+			@include translate(0%, -50%);
+
+			.half{
+				width:42.5%;
+				margin:0 2.5% 0 5%;
+				position:relative;
+				float:left;
+				height:100%;
+
+				&.r{
+					margin:0 5% 0 2.5%;
+				}
+			}
+		}
+
+		&.active {
+			@include opacity(1);
+			z-index:1;
+		}
+
+		&.welcome {
+			@include opacity(1);
+			z-index:1;
+			left:0;
+		}
+
+		&.endCard{
+			left:300%;
+			@include transition(all, $longTransition);
+
+			.endNote{
+				text-align: center;
+				width: 72%;
+				height:80px;
+				margin: 0 0 0 14%;
+				position: fixed;
+				display: block;
+				top: -80px;
+				left: 0%;
+				z-index: -1;
+				@include opacity(1);
+				@include transition(all, $longTransition);
+				@include capsFontStyle;
+			}
+
+			&.active{
+				left:200%;
+			}
+
+			&.active > .endNote{
+				top:40px;
+			}
+
+		}
+	}
 }

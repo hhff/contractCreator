@@ -1,0 +1,29 @@
+.clause{
+	margin-top:20px;
+	margin-bottom:20px;
+	height:180px;
+	background-color:pink;
+	overflow: scroll;
+	background-color: $darkGrey;
+	@include user-select(text);
+
+	&.trans{
+		margin-bottom:0px;
+	}
+
+	h2{
+		margin:0;
+		font-size:11px;
+		display:inline-block;
+		//white-space: pre;
+	}
+
+}
+
+.clauseTitle{
+	height:5%;
+	h1{
+		@include labelFontStyle;
+		margin:0;
+	}
+}

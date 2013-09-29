@@ -1,0 +1,35 @@
+VISUAL
+Dotted Lines
+Style Pickadate & Add Calendar icon on date fields
+
+FUNCTIONAL
+Line Breaks & White Space in Clauses
+
+Bit.ly
+
+
+
+
+BUGS
+Indicator Skipping screws up order
+
+
+
+
+DATA
+Finish Clauses
+Terms & Conditions
+
+
+
+
+
+NICE TO HAVES
+Progress Buttons should have bigger hotspots
+Blinking Cursor (hectic)
+Add Enter & Backspace // Left & Right for Back & Next
+Browser Awareness Day
+Mobile Layout
+Smaller than minimum sizing stuff
+Break out controller logic into private functions
+Copy to clipboard

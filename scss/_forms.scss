@@ -1,0 +1,76 @@
+.survey{
+	height:100%;
+
+	label{
+		@include labelFontStyle;
+	}
+
+	input{
+		width:88%;
+		border: none;
+		margin: 20px 0 20px 0;
+		padding: 6%;
+		text-align: center;
+		background-color: $darkGrey;
+		@include labelFontStyle;
+		@include transition(opacity, $shortTransition);
+
+		&#uploader{
+		  display: none;
+		}
+
+		&.invalid{
+			background-color: $lightOrange;
+		}
+
+		&.valid{
+			background-color: $lightGreen;
+		}
+
+		&:focus{
+			border:none;
+			outline: none;
+		}
+
+		&.dropdown{
+			cursor:pointer;
+		}
+
+		&[type=textarea]{
+		}
+	}
+
+	.clauseSwitch{
+		width:88%;
+		border: none;
+		margin: 20px 0 20px 0;
+		padding: 6%;
+		text-align: center;
+		background-color: $lightGreen;
+		@include labelFontStyle;
+		cursor: pointer;
+		@include transition(background-color, $shortTransition);
+
+		&.disabled{
+			background-color: $lightOrange;
+		}
+	}
+
+	#uploadInit{
+		width:88%;
+		border: none;
+		margin: 20px 0 20px 0;
+		padding: 6%;
+		text-align: center;
+		background-color: $darkGrey;
+		@include capsFontStyle;
+		cursor: pointer;
+		@include transition(background-color, $shortTransition);
+
+		&.valid{
+			background-color: $lightGreen;
+		}
+	}
+}
+
+

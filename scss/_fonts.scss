@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+@mixin labelFontStyle {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+	font-size: 18px;
+	color: $textGrey;
+}
+
+@mixin titleFontStyle {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+	font-size: 50px;
+	color: $darkOrange;
+	margin:0;
+}
+
+@mixin capsFontStyle {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+	font-size: 16px;
+	color: $textGrey;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
