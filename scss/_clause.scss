@@ -3,9 +3,13 @@
 	margin-bottom:20px;
 	height:180px;
 	background-color:pink;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	background-color: $darkGrey;
 	@include user-select(text);
+	text-align:left;
+	@include box-sizing(border-box);
+	padding: 10px 15px;
 
 	&.trans{
 		margin-bottom:0px;
@@ -14,8 +18,13 @@
 	h2{
 		margin:0;
 		font-size:11px;
-		display:inline-block;
+		display:inline;
 		//white-space: pre;
+		line-height: 21px;
+
+		&.dataVar{
+			background-color: $lightGreen;
+		}
 	}
 
 }

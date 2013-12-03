@@ -27,7 +27,7 @@ define([], function(){
           <div class='clauseTitle'>\
             <h1>Clause Preview</h1>\
           </div>\
-          <div class='clause'>\
+          <div class='clause legal' data-name='{{readableName}}'>\
             <h2>{{{clause}}}</h2>\
           </div>\
           <div class='clauseTitle'>\

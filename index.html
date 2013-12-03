@@ -10,6 +10,13 @@
   </head>
   <body>
     <div id='container'>
+      <div id='overlay'></div>
+      <div id='context'>
+        <div id='moreInfo'>
+          <h2>WHY?</h2>
+        </div>
+        <div id='error'></div>
+      </div>
       <!-- #logo -->
       <div id='progress'>
         <div id='progressContainer'></div>
@@ -22,8 +29,9 @@
         <div class='content'>
           <div class='welcomeCard'>
             <div id='contractLogo'></div>
-            <h1>Contract Genius</h1>
-            <h2>Generate contracts online, then send to artists in an easy to read format.</h2>
+            <h1>LabelMachin.es</h1>
+            <h2>The world's first open source record label contract.</h2>
+            <div class='button moreInfo'>MORE INFO</div>
             <div class='button beginButton'>BEGIN</div>
           </div>
         </div>
@@ -57,8 +65,8 @@
               <div class='survey'>
                 <label>Add your label's logo</label>
                 <div id='uploadInit'>Upload a 200px square JPEG</div>
-                <label>Your email:</label>
-                <input id='labelEmail'>
+                <!-- %label Your email: -->
+                <!-- %input#labelEmail -->
                 <input id='uploader' type='file'>
               </div>
             </div>
@@ -66,8 +74,8 @@
               <div class='survey'>
                 <label>Come back to this contract:</label>
                 <input id='bitly'>
-                <label>Your artist's email:</label>
-                <input id='artistEmail'>
+                <!-- %label Your artist's email: -->
+                <!-- %input#artistEmail -->
               </div>
             </div>
             <div class='termsConditions'>I agree to the terms and conditions.</div>

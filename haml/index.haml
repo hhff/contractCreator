@@ -9,6 +9,12 @@
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
 	%body
 		#container
+			#overlay
+			#context
+				#moreInfo
+					%h2 WHY?
+				#error
+					
 			/#logo
 			#progress
 				#progressContainer
@@ -19,8 +25,9 @@
 				.content
 					.welcomeCard
 						#contractLogo
-						%h1 Contract Genius
-						%h2 Generate contracts online, then send to artists in an easy to read format. 
+						%h1 LabelMachin.es
+						%h2 The world's first open source record label contract.
+						.button.moreInfo MORE INFO
 						.button.beginButton BEGIN
 			
 			#templatesContainer
@@ -55,16 +62,16 @@
 							.survey
 								%label Add your label's logo
 								#uploadInit Upload a 200px square JPEG
-								%label Your email:
-								%input#labelEmail
+								/ %label Your email:
+								/ %input#labelEmail
 								%input#uploader{ :type => 'file' }
 
 						.half.r
 							.survey
 								%label Come back to this contract:
 								%input#bitly
-								%label Your artist's email:
-								%input#artistEmail
+								/ %label Your artist's email:
+								/ %input#artistEmail
 
 						.termsConditions I agree to the terms and conditions.
 						

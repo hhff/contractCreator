@@ -31,9 +31,16 @@ define(['jquery', 'handlebars', 'panelTemplate', 'navTemplate', 'data', 'pinch']
 
 	contracts._update = function(form){
 		var $me = $(form),
+			myClass = 
 			myMatcher = $me.data('matcher'),
-			myVal = $me.val();
-			$clauseVars.filter('[data-matched="'+myMatcher+'"]').text(myVal);
+			myVal = $me.val(),
+			myText = $clauseVars.filter('[data-matched="'+myMatcher+'"]');
+			
+			if(!myVal){
+				myVal = $me.attr('placeholder');
+			};
+
+			myText.text(myVal);
 	}
 
 	_compile = function(t){

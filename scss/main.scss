@@ -27,6 +27,52 @@ body {
 	@include user-select(none);
 	z-index:1;
 
+	&.overlayActive{
+		//@include filter(blur(2px));
+
+		#overlay{
+			@include opacity(0.6);
+			pointer-events: auto;
+		}
+
+		#context{
+			@include opacity(1);
+			pointer-events:auto;
+		}
+	}
+
+	#overlay{
+		@include transition(opacity, $longTransition);
+		position:absolute;
+		width:300%;
+		height:100%;
+		background-color:black;
+		z-index: 3;
+		@include opacity(0);
+		pointer-events:none;
+	}
+
+	#context{
+		background-color: $lightGrey;
+		@include transition(opacity, $longTransition);
+		@include opacity(0);
+		z-index: 4;
+		position: fixed;
+		width:500px;
+		height:500px;
+		background-color:white;
+		left: 50%;
+		top: 50%;
+		@include transform(translate(-50%, -50%));
+		pointer-events:none;
+		@include box-sizing(border-box);
+		padding:0px 15px;
+
+		#moreInfo{
+
+		}
+	}
+
 	#logo {
 		width: 250px;
 		height: 41px;
@@ -86,6 +132,11 @@ body {
 
 				&.invalid{
 					background: $lightOrange;					
+				}
+
+				&.red{
+					background: $pastelRed;
+					@include scale(1.5);
 				}
 			}	
 		}

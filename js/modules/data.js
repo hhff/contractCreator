@@ -6,6 +6,7 @@ define([''], function(){
 				// COMPANY NAMING CLAUSE
 				{
 					name: "companyNaming",
+					readableName: "Company Naming",
 					vars: {
 						companyName:{
 							label: "What is the name of your company?",
@@ -23,6 +24,7 @@ define([''], function(){
 				//ARTIST NAMING CLAUSE
 				{
 					name: "artistNaming",
+					readableName: "Company Naming",
 					vars: {
 						artistName:{
 							label: "What is the artist's (real) name?",
@@ -40,6 +42,7 @@ define([''], function(){
 				// MINIMUM COMMITMENT CLAUSE
 				{
 					name: "minimumCommitment",
+					readableName: "Company Naming",
 					vars: {
 						releaseFormat:{
 							label: "What will the format of the release be?",
@@ -67,6 +70,7 @@ define([''], function(){
 				// TERRITORY CLAUSE
 				{
 					name: "territory",
+					readableName: "Company Naming",
 					vars: {
 						territory:{
 							label: "In what territories will this contract be effective?",
@@ -80,6 +84,7 @@ define([''], function(){
 				// MASTERS CLAUSE
 				{
 					name: "masters",
+					readableName: "Company Naming",
 					vars: {
 						exclusivityPeriod:{
 							label: "How long will your company want exclusive rights over the masters?",
@@ -93,6 +98,7 @@ define([''], function(){
 				// WORKS CLAUSE
 				{
 					name: "test",
+					readableName: "Company Naming",
 					switchable: "enabled",
 					vars: {
 						territory:{

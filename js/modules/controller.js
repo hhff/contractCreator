@@ -8,6 +8,8 @@ define(['jquery', 'pickadate'], function($, pickadate){
 		$navContainer = $('#navButtons'),
 		$progress = $('#progress'),
 		$beginButton = $('.beginButton'),
+		$moreInfo = $('.moreInfo'),
+		$overlay = $('#overlay'),
 		$templatesContainer = $('#templatesContainer'),
 		$progressContainer = $('#progressContainer');
 
@@ -21,8 +23,16 @@ define(['jquery', 'pickadate'], function($, pickadate){
 			controller._validateIndicators($indicators, $panels);
 		})
 
+		$moreInfo.on('click', function(){
+			controller._toggleOverlay();
+		})
+
+		$overlay.on('click', function(){
+			controller._toggleOverlay();
+		})
+
 		$nextButton.on('click', function(){
-			controller._nextPanel();
+			controller._nextPanel($panels);
 			controller._validateIndicators($indicators, $panels);
 		})
 
@@ -39,6 +49,10 @@ define(['jquery', 'pickadate'], function($, pickadate){
 			$me.addClass('active');
 			$panels.removeClass('active');
 			$panels.filter('#'+$me.attr('id')).addClass('active');
+			currentPanel = ($panels.filter('.active').index()+1);
+
+			$container.data('currentPanel', currentPanel);
+
 			controller._validateIndicators($indicators, $panels);
 		})
 
@@ -182,16 +196,30 @@ define(['jquery', 'pickadate'], function($, pickadate){
 		controller._toggleNavButtons();
 	}
 
-	controller._nextPanel = function(){
+	controller._nextPanel = function($panels){
 		var currentPanel = $container.data('currentPanel'),
 			$activePanel = $('.panel.active'),
 			$activeIndicator = $('.indicator.active');
 
 		if ($activePanel.next().hasClass('endCard')){
+
+			// if ($panels.hasClass('invalid')){
+			// 	controller._pulseInvalids();
+			// }else{
+			// 	$nextButton.removeClass('active');
+			// 	$activePanel.removeClass('active');
+			// 	$activePanel.next().addClass('active');
+			// 	$progress.toggleClass('active');
+			// }
+
+
+			//Delete this block and Uncomment above for production
 			$nextButton.removeClass('active');
 			$activePanel.removeClass('active');
 			$activePanel.next().addClass('active');
 			$progress.toggleClass('active');
+
+
 
 		}else{
 			$activePanel.removeClass('active');
@@ -250,7 +278,10 @@ define(['jquery', 'pickadate'], function($, pickadate){
 			$activePanel.addClass('invalid');
 			$activePanel.removeClass('valid');
 		}
+	}
 
+	controller._toggleOverlay = function(context){
+		$container.toggleClass('overlayActive');
 	}
 
 	controller._validateIndicators = function(indicators, panels){
@@ -262,6 +293,19 @@ define(['jquery', 'pickadate'], function($, pickadate){
 		}else{
 			indicators.filter('#'+myKey).removeClass('valid').addClass('invalid');
 		}
+	}
+
+	controller._pulseInvalids = function(){
+		$indicators = $('.indicator');
+
+		$invalids = $indicators.filter('.invalid');
+
+		$invalids.addClass('red');
+
+		window.setTimeout(function(){
+			$invalids.removeClass('red')
+		}, 400);
+
 	}
 
 	return controller;
