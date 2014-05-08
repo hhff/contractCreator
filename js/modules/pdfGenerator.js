@@ -22,12 +22,10 @@ define(['jquery', 'jspdf', 'blobBuilder', 'fileSaver'], function($, jspdf, jspdf
 
 		$clauses = $('.clause.legal');
 
-
-
 		var contract = new jsPDF();
 
 		pdfg._setupPage(contract);
-		
+
 		var runningHeight = 44,
 			clauseCounter = 1,
 			runningLimit = 280;
@@ -84,7 +82,7 @@ define(['jquery', 'jspdf', 'blobBuilder', 'fileSaver'], function($, jspdf, jspdf
 
 				runningHeight = runningHeight + 8;
 				clauseCounter++
-				
+
 			};
 
 		});
@@ -128,7 +126,7 @@ define(['jquery', 'jspdf', 'blobBuilder', 'fileSaver'], function($, jspdf, jspdf
 		contract.line(60, runningHeight, 160, runningHeight);
 		runningHeight += 5;
 		contract.text(60, runningHeight, 'For and on behalf of the THE COMPANY');
-		
+
 		runningHeight += 16;
 		contract.line(60, runningHeight, 160, runningHeight);
 		runningHeight += 5;

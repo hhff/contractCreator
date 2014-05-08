@@ -95,18 +95,16 @@ define(['jquery', 'pickadate'], function($, pickadate){
 
 			//VALIDATION LOGIC
 
-
 			if(!$me.val() == ''){
 				$me.removeClass('invalid');
 				$me.addClass('valid');
 			}else{
 				$me.removeClass('valid');
-				$me.addClass('invalid');				
+				$me.addClass('invalid');
 			}
 
 			controller._validatePanels($panels);
 			controller._validateIndicators($indicators, $panels);
-
 
 			//NONE
 		})
@@ -124,15 +122,13 @@ define(['jquery', 'pickadate'], function($, pickadate){
 				$me.addClass('valid');
 			}else{
 				$me.removeClass('valid');
-				$me.addClass('invalid');				
+				$me.addClass('invalid');
 			}
 
 			controller._validatePanels($panels);
 			controller._validateIndicators($indicators, $panels);
 			//END
 		})
-
-
 
 		//DROPDOWNS LOGIC HERE
 		$updater.focus(function(){
@@ -143,13 +139,12 @@ define(['jquery', 'pickadate'], function($, pickadate){
 				$('.options').filter('[data-matcher="'+myKey+'"]').toggleClass('active').children().toggleClass('active');
 			}
 
-			//VALIDATION LOGIC HERE 
+			//VALIDATION LOGIC HERE
 			if ($me.val() == '' && !$me.hasClass('invalid') ){
 				$me.addClass('invalid');
 			}
 			//VALIDATION LOGIC OVER
 		})
-
 
 		// $updater.blur(function(){
 		// 	$me = $(this);
@@ -225,7 +220,7 @@ define(['jquery', 'pickadate'], function($, pickadate){
 			$activePanel.removeClass('active');
 			$activeIndicator.removeClass('active');
 			$activePanel.next().addClass('active');
-			$activeIndicator.next().addClass('active');			
+			$activeIndicator.next().addClass('active');
 		}
 
 		currentPanel ++;
