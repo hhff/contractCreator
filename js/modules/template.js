@@ -8,7 +8,7 @@ define([], function(){
           <div class='survey'>\
             {{#each vars}}\
             <label>{{label}}</label>\
-            <input class='updater' data-matcher='{{@key}}' placeholder='{{value}}'>\
+            <input class='2 years minimum' data-matcher='{{@key}}' placeholder='{{value}}'>\
             {{/each}}\
           </div>\
         </div>\
